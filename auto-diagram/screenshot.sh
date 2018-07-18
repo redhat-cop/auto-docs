@@ -5,5 +5,5 @@ sleep 10 && cd ./headless_chrome && google-chrome-stable --headless --disable-gp
 sleep 20 && node ./headless_chrome/screenshot2.js
 mv ./headless_chrome/output.jpeg ./output.jpeg
 killall npm -v
-killall chrome -v
+killall -v -y 20s chrome 
 echo "press ctrl+c to exit"
