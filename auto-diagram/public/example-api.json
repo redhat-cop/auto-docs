@@ -1,0 +1,80 @@
+{
+  "metadata": {
+    "customerName": "XYZ Corp",
+    "start": "2018-10-08",
+    "end": "2018-11-19"
+  },
+  "stack": {
+    "hosting": [
+      {
+        "name": "openStack",
+        "icon": "fas fa-server"
+      },
+      {
+        "name": "Amazon Web Services",
+        "icon": "fab fa-aws"
+      }
+    ],
+    "sourceControl": [
+      {
+        "name": "GitHub",
+        "icon": "fab fa-github"
+    },
+    {
+      "name": "Gitlab",
+      "icon": "fab fa-gitlab"
+    }
+    ],
+    "collaborationTools": [
+      {
+        "name": "Slack",
+        "icon": "fab fa-slack"
+      },
+      {
+        "name": "Jira",
+        "icon": "fas fa-project-diagram"
+      }
+    ],
+    "environments": [
+
+      {
+        "name": "Demo"
+      },
+      {
+        "name": "Test"
+      },
+      {
+        "name": "Security"
+      },
+      {
+        "name": "Development"
+      }
+    ],
+    "appContainers": [
+      {
+        "name": "Spring Boot",
+        "icon": "fas fa-th"
+      },
+      {
+        "name": "Mongo",
+        "icon": "fas fa-database"
+      },
+      {
+        "name": "Vue",
+        "icon": "fab fa-vuejs"
+      }
+    ],
+    "testLibraries": [
+      {
+        "name": "Jest",
+        "icon": "fas fa-microchip"
+      },  {
+        "name": "JUnit",
+        "icon": "fas fa-microchip"
+      }
+    ]
+  },
+  "assets": {
+    "highLevelDiagram": "https://example.com/foobar"
+  }
+}

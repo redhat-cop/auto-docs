@@ -1,0 +1,7 @@
+It will shut down google chrome when finished.
+It generates a huge font related error stack when using chrome (not when using chromium).
+It still relies on a python script for input (exploring alternatives here).
+It requires python3 to be installed (need to add requirement).
+README will be updated by 12:00 pm today.
+It is still requiring hard coded delays to guarentee that it works.
+Still need to correct styling to reflect feedback (currently doesn't show enough of the infrastructure).

@@ -1,0 +1,222 @@
+---
+openapi: 3.0.0
+info:
+  title: Auto Diagram
+  description: |-
+    Generate diagrams and documentation from information about a residency.
+
+    Note: this data may be periodically deleted. For long-term use, store assets outside of this API in source control, a wiki, etc.
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  version: 0.1.0
+paths:
+  /residencies:
+    post:
+      summary: Create a new residency object from the supplied parameters.
+      description: If the request succeeds, new assets (diagrams, etc.) will be created.
+        This data may be periodically deleted. For long-term use, store assets outside
+        of this API in source control, a wiki, etc.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/residency'
+        required: true
+      responses:
+        200:
+          description: Returns the generated diagram.
+          content:
+            image/png: {}
+        400:
+          description: The diagram parameters were not valid or were not supplied.
+          content:
+            application/json: {}
+  /residencies/{id}:
+    get:
+      summary: Returns all data associated with this residency.
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/residency'
+              examples:
+                XYZ Corp:
+                  value:
+                    metadata:
+                      customerName: XYZ Corp
+                      start: 2018-10-08
+                      end: 2018-11-19
+                    stack:
+                      hosting:
+                      - name: openStack
+                        icon: openstack
+                      - name: Aamazon Web Services
+                        icon: aws
+                      sourceControl:
+                      - name: GitHub
+                        icon: github
+                      collaborationTools:
+                      - name: Slack
+                        icon: slack
+                      - name: Jira
+                        icon: jira
+                      environments:
+                      - name: Development
+                      - name: Test
+                      appContainers:
+                      - name: Spring Boot
+                        icon: springboot
+                      - name: Mongo
+                        icon: database
+                      - name: Vue
+                        icon: vue
+                      testLibraries:
+                      - name: Jest
+                        icon: jest
+                      - name: JUnit
+                        icon: junit
+                    assets:
+                      highLevelDiagram: https://example.com/foobar
+        404:
+          description: No residency with this ID was found.
+    put:
+      summary: Update the data for a residency
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/residency'
+        required: true
+      responses:
+        200:
+          description: Residency assets successfully created. Response will include
+            the "assets" property in the residency object.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/residency'
+        400:
+          description: No valid residency was supplied.
+    parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  /residencies/{id}/assets/high-level-diagram/:
+    get:
+      summary: Returns a high-level diagram.
+      responses:
+        200:
+          content:
+            image/png: {}
+        404:
+          description: No residency with this ID was found, or the residency did not
+            have this asset.
+    parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  /residencies/{id}/assets/:
+    get:
+      summary: Returns all assets associated with this residency.
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/residency'
+        404:
+          description: No residency with this ID was found.
+    parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+components:
+  schemas:
+    stack:
+      title: Root Type for stack
+      description: The root of the stack type's schema.
+      required:
+      - appContainers
+      - collaborationTools
+      - environments
+      - hosting
+      - testLibraries
+      type: object
+      properties:
+        hosting:
+          type: array
+          items:
+            $ref: '#/components/schemas/technology'
+        sourceControl:
+          type: array
+          items:
+            $ref: '#/components/schemas/technology'
+        collaborationTools:
+          type: array
+          items:
+            $ref: '#/components/schemas/technology'
+        environments:
+          type: array
+          items:
+            type: string
+        appContainers:
+          type: array
+          items:
+            $ref: '#/components/schemas/technology'
+        testLibraries:
+          type: array
+          items:
+            $ref: '#/components/schemas/technology'
+    assetCollection:
+      properties:
+        highLevelDiagram:
+          $ref: '#/components/schemas/asset'
+    asset:
+      required:
+      - url
+      properties:
+        url:
+          type: string
+        type:
+          description: 'May be one of: "diagram", "document"'
+          type: string
+    residency:
+      required:
+      - metadata
+      - stack
+      properties:
+        assets:
+          $ref: '#/components/schemas/assetCollection'
+        metadata:
+          $ref: '#/components/schemas/metadata'
+        stack:
+          $ref: '#/components/schemas/stack'
+    metadata:
+      properties:
+        customerName:
+          type: string
+        start:
+          format: date
+          type: string
+        end:
+          format: date
+          type: string
+    technology:
+      required: []
+      properties:
+        name:
+          type: string
+        icon:
+          type: string
+    environment:
+      properties:
+        name:
+          type: string
