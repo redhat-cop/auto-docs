@@ -1,0 +1,30 @@
+---
+# defaults file for gen-docs
+path: .
+docname: docs.md
+
+about:
+  description: <tbd>
+  purpose: <tbd>
+  install_date: <tbd>
+  retired_date: <tbd>
+  root_access: no
+  console_url: <tbd>
+  default_domain: <tbd>
+  exposed_registry: <tbd>
+  openshift_logging: <tbd>
+  openshift_metrics: <tbd>
+
+general_info:
+  - what: <tbd>
+    description: <tbd>
+    version: <tbd>
+    other_info: <tbd>
+
+nodes:
+  - instance: <tbd>
+    OpenShiftVer: <tbd>
+    DNS_FQDN: <tbd>
+    IdM_SSH: <tbd>
+    IdM_LDAP_OC: <tbd>
+    Other_Info: <tbd>

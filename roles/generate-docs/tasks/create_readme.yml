@@ -1,0 +1,12 @@
+---
+# Attempted to generate docs with the uri module like:
+# https://github.com/redhat-cop/infra-ansible/blob/master/roles/ansible/tower/manage-inventories/tasks/process-group.yml
+# But recieved error "unautorized". Is this method specifically for ansible tower?
+
+# Also, attempted using the pandoc cli tool like:
+# https://github.com/redhat-cop/infra-ansible/blob/master/roles/notifications/md-to-html/tasks/convert_md_to_html.yml
+# But I ran into issues with this as the template is pre-written in markdown
+
+- name: Convert template to html
+  shell: >
+    echo "{{ lookup('template', 'docs-template.j2')}}" > {{ path }}/{{ docname }}
