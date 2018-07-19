@@ -4,10 +4,6 @@ WORKDIR /app
 
 ADD . /app
 
-# install npm command
-RUN curl -sL https://rpm.nodesource.com/setup_10.x | bash - && \
-  yum install nodejs python36u && \
-  npm install && \
- ./screenshot.sh
+RUN curl -sL https://rpm.nodesource.com/setup_8.x | bash - && yum install -y nodejs 
 
-#CMD["./screenshot.sh"]
+CMD echo foo
