@@ -4,6 +4,11 @@ WORKDIR /app
 
 ADD . /app
 
-RUN curl -sL https://rpm.nodesource.com/setup_8.x | bash - && yum install -y nodejs 
+ADD ./google-chrome.repo /etc/yum.repos.d/google-chrome.repo
+
+RUN curl -sL https://rpm.nodesource.com/setup_8.x | bash - && \
+    yum install -y nodejs && \
+    yum install -y google-chrome-stable && \
+    npm install 
 
 CMD echo foo
