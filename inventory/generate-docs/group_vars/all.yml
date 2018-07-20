@@ -1,9 +1,9 @@
 ---
 description: <tbd>
 
-template_name: docs-template.j2
+template_name: ./inventory/docs-template.j2
 
-path: .
+path: ./
 docname: doc1.md
 
 about:
