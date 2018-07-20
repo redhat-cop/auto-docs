@@ -1,0 +1,64 @@
+---
+description: <tbd>
+
+template_name: docs-template.j2
+
+path: .
+docname: doc1.md
+
+about:
+  purpose: <tbd>
+  install_date: <tbd>
+  retired_date: <tbd>
+  root_access: yes | no
+  console_url: https://<tbd>/rht-labs.com
+  default_domain: apps.<tbd>.rht-labs.com
+  exposed_registry: https://registry-console-defualt.apps.<tbd>.rht-labs.com
+  openshift_logging: https://kibana.apps.<tbd>.rht-labs.com
+  openshift_metrics: https://hawkular-metrics.apps.<tbd>.rht-labs.com
+
+general_info:
+  - what: IaaS/infrastructure
+    description: e.g.:Red Hat OpenStack Platform
+    version: <x.y.z>
+    other_info: <tbd>
+  - what: PaaS
+    description: OpenShift
+    version: <x.y.z.w>
+    other_info: <tbd>
+  - what: Github
+    description: Application Code
+    version: <tbd>
+    other_info: <tbd>
+
+nodes:
+  - instance: master1
+    OpenShiftVer: <tbd>
+    DNS_FQDN: <tbd>
+    IdM_SSH: yes/no
+    IdM_LDAP_OC: yes/no
+    Other_Info: <tbd>
+  - instance: node1
+    OpenShiftVer: <tbd>
+    DNS_FQDN: <tbd>
+    IdM_SSH: yes/no
+    IdM_LDAP_OC: yes/no
+    Other_Info: <tbd>
+  - instance: node2
+    OpenShiftVer: <tbd>
+    DNS_FQDN: <tbd>
+    IdM_SSH: yes/no
+    IdM_LDAP_OC: yes/no
+    Other_Info: <tbd>
+  - instance: node3
+    OpenShiftVer: <tbd>
+    DNS_FQDN: <tbd>
+    IdM_SSH: yes/no
+    IdM_LDAP_OC: yes/no
+    Other_Info: <tbd>
+  - instance: nfs1
+    OpenShiftVer: <tbd>
+    DNS_FQDN: <tbd>
+    IdM_SSH: yes/no
+    IdM_LDAP_OC: yes/no
+    Other_Info: <tbd>

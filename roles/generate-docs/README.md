@@ -3,16 +3,22 @@ gen-docs
 
 The purpose of this role is to auto-generate documentation for labs residencies.
 
-Requirements
-------------
-
 For testing purposes, you may want to consider using `grip`. This will allow
 you to use fully rendered markdown files.
 
 https://pypi.org/project/grip/
 
+Requirements
+------------
+
+
 Role Variables
 --------------
+
+*NOTE:* The only variables which will effect the execution flow of this role
+are `path` and `name`, which refer to the path where the document will be
+stored and then name respectively. All other variables relate to formatting 
+of the template. 
 
 An example of the role variables:
 
@@ -80,8 +86,6 @@ nodes:
     Other_Info: <tbd>
 ```
 
-A defualt set is included under the defaults directory, however they should be overwritten as no information is provided beyond what is required for the role to execute.  
-
 Dependencies
 ------------
 
@@ -101,9 +105,9 @@ Example Playbook
 License
 -------
 
-BSD
+Apache License 2.0
 
 Author Information
 ------------------
 
-github: @bvkin
+Red Hat Community of Practice & staff of the Red Hat Open Innovation Labs.
