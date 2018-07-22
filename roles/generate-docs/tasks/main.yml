@@ -3,12 +3,5 @@
 
 - name: Register template
   set_fact:
-    documentation: "{{ lookup('template', '{{ template_name }}')}}"
-
-- name: Save markdown file
-  copy:
-    content: "{{ documentation }}"
-    dest: "{{ path }}/{{ docname }}"
-    owner: "{{ ansible_user_id }}"
-    group: "{{ ansible_user_id }}"
-    mode: 0664
+    generate_docs:
+      output: "{{ lookup('template', '{{ template_path }}')}}"

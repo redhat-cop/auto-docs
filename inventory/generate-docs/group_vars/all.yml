@@ -1,10 +1,7 @@
 ---
 description: <tbd>
 
-template_name: ./inventory/docs-template.j2
-
-path: ./
-docname: doc1.md
+template_path: "{{ inventory_dir }}/docs-template.j2"
 
 about:
   purpose: <tbd>
