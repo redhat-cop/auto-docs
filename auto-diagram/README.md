@@ -17,6 +17,23 @@ We're following the philosophy laid out in [Consumer-Driven Contracts](https://m
 The API is versioned using [Semver](https://semver.org/). Backwards-compatible feature updates (e.g., new properties added) are indicated by minor releases. Breaking changes (e.g., an endpoint is renamed or a property is removed) are indicated by major releases.
 
 ## Development
+### Using a Container
+#### Previewing an image
+1. Clone the repository.
+2. Navigate to the `auto-diagram` of the repository.
+3. Review the `/JSONS/` folder to see the different pre-set json files or add your own custom json file there and copy it to the `public/example-api.json`, overwriting the existing file.
+4. Run `$ docker image build .` to build the docker image.
+5. Run `$ docker run -it <IMAGE ID> bash`.
+ - Run `$ docker images` to reveal the IDs of all images.
+6. Run `# npm run serve` to run the npm server inside of the container.
+7. Navigate to the Network URL in your favorite browser (preferably chrome) to preview the image.
+- any modifications you make to the `./public/example-api.json` file inside of the container will be reflected in this preview
+
+#### Taking a screenshot
+0. Follow steps 1-5 from **Previewing an image**.
+1. Run `$ ./container.sh` to build the image inside of your built.
+2. In a separate terminal, run `$ docker cp <CONTAINER ID>:/app/output.jpeg /screenshot/local/path` to copy the image from the container
+
 ### Using the CLI
 1. Clone the repository.
 2. Navigate to the root folder of the repository.
