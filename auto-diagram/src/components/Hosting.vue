@@ -1,5 +1,7 @@
 <template>
-      <i class="host"> <span>{{struct.name}}</span> </i>
+      <div>
+          <i :class = "struct.icon"></i> <span>{{struct.name}}</span>
+      </div>
 </template>
 
 <script>
@@ -21,6 +23,11 @@
 
 .host:last-child {
     border-bottom: none;
+}
+
+.textInside {
+    font-family: Overpass;
+
 }
 
 </style>

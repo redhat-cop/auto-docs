@@ -1,5 +1,7 @@
 <template>
-      <i class="container"> <span>{{substruct.name}}</span></i>
+      <div>
+          <p :class = "substruct.icon"></p> <span>{{substruct.name}}</span>
+      </div>
 </template>
 
 <script>

@@ -9,7 +9,7 @@
               <div class="collaboration-wrapper">
                   <div class="sub-box-heading"> <h2>COLLABORATION</h2> </div>
                   <app-collaboration
-                    v-for="item in input_data.stack.collaborationTools" :class="item.icon"
+                    v-for="item in input_data.stack.collaborationTools"
                     v-bind:struct="item">
                   </app-collaboration>
               </div>
@@ -27,7 +27,7 @@
               <div class="source-wrapper">
                   <div class="sub-box-heading"> <h2>SOURCE CONTROL</h2> </div>
                   <app-source
-                    v-for="item in input_data.stack.sourceControl" :class="item.icon"
+                    v-for="item in input_data.stack.sourceControl"
                     v-bind:struct="item">
                   </app-source>
               </div>
@@ -37,7 +37,7 @@
       	<div class="sub-box-heading"><h2>PIPELINE</h2></div>
               <div class="test-wrapper">
                   <app-test
-                    v-for="item in input_data.stack.testLibraries" :class="item.icon"
+                    v-for="item in input_data.stack.testLibraries"
                     v-bind:struct="item">
                   </app-test>
               </div>
@@ -50,7 +50,7 @@
 	<div class="sub-box-heading"><h2>HOSTING</h2></div>
         <div class="hosting-wrapper">
             <app-hosting
-              v-for="item in input_data.stack.hosting" :class="item.icon"
+              v-for="item in input_data.stack.hosting"
               v-bind:struct="item">
             </app-hosting>
         </div>
