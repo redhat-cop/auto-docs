@@ -1,6 +1,6 @@
 <template>
   <div class="environment">
-      <p class="title"> <strong>{{ struct.name }}</strong> </p>
+      <p> <strong>{{ struct.name }}</strong> </p>
       <app-container
         v-for="item in applications"
         v-bind:substruct="item">
@@ -24,15 +24,18 @@ import AppContainer from './AppContainer.vue'
 </script>
 
 <style scoped>
+
+* {
+    padding: 0px !important;
+}
+
 .environment {
     /* background-color: #81ecec; */
-    margin: 5px;
+    /* margin: 5px; */
     display: grid;
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-areas:
-    "e e e"
-    "o o o";
+    grid-template-rows: auto, auto;
+    grid-template-columns: 1fr 1fr 1fr;
+
     border-bottom: 2px solid #d8dcdd;
 }
 
@@ -40,7 +43,4 @@ import AppContainer from './AppContainer.vue'
     border-bottom: none;
 }
 
-.title {
-    grid-area: e;
-}
 </style>

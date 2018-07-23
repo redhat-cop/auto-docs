@@ -15,14 +15,12 @@
               </div>
           </div>
           <div class="content-box-environment">
-              <div class="environment-wrapper">
-                  <div class="sub-box-heading"> <h2>ENVIRONMENT</h2> </div>
-                  <app-environment :applications="input_data.stack.appContainers"
+             <div class="sub-box-heading"> <h2>ENVIRONMENT</h2> </div>
+                 <app-environment :applications="input_data.stack.appContainers"
                     v-for="item in input_data.stack.environments"
                     v-bind:struct="item">
                   </app-environment>
               </div>
-          </div>
           <div class="content-box-source">
               <div class="source-wrapper">
                   <div class="sub-box-heading"> <h2>SOURCE CONTROL</h2> </div>
@@ -47,7 +45,7 @@
 
 
     <div class="content-box-hosting">
-	<div class="sub-box-heading"><h2>HOSTING</h2></div>
+	<div class="box-heading"><h2>HOSTING</h2></div>
         <div class="hosting-wrapper">
             <app-hosting
               v-for="item in input_data.stack.hosting"
@@ -113,6 +111,10 @@ html {
     font-family: Overpass;
 }
 
+* {
+    padding: 5px;
+}
+
 #app {
     display: grid;
     grid-template-columns: [appdev-start test-start source-start hosting-start] auto [test-end environment-start] auto auto auto [source-end collaboration-start] auto [environment-end collaboration-end hosting-end appdev-end];
@@ -125,9 +127,7 @@ h2 {
     margin: 0px;
 }
 
-* {
-    padding: 5px;
-}
+
 
 span {
     font-weight: normal;
@@ -145,8 +145,8 @@ span {
 .sub-box-heading {
     margin: 0px;
     text-align: center;
-    background: #bc202a;
-    color: #fff;
+    color: #bc202a;
+    background-color: #fff;
     margin: 0px;
 }
 
@@ -184,7 +184,7 @@ span {
 
 
 .content-box-environment{
-    border: 10px solid #d8dcdd;
+    /* border: 10px solid #d8dcdd; */
     grid-area: environment;
 
 }
@@ -194,14 +194,14 @@ span {
 }
 
 .collaboration-wrapper {
-    border: 10px solid #d8dcdd;
+    /* border: 10px solid #d8dcdd; */
     grid-area: collaboration;
     display: grid;
     grid-row: repeat(2, 1fr);
 }
 
 .content-box-test{
-    border: 10px solid #d8dcdd;
+    /* border: 10px solid #d8dcdd; */
     grid-area: test;
 }
 .test-wrapper {
@@ -211,7 +211,7 @@ span {
 }
 
 .content-box-source{
-    border: 10px solid #d8dcdd;
+    /* border: 10px solid #d8dcdd; */
     grid-area: source;
 }
 .source-wrapper {

@@ -1,5 +1,5 @@
 <template>
-      <div>
+      <div class="collaboration">
           <i :class = "struct.icon"></i> <span>{{struct.name}}</span>
       </div>
 </template>

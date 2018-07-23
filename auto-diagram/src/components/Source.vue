@@ -1,5 +1,5 @@
 <template>
-      <div>
+      <div class="source">
           <i :class = "struct.icon"></i> <span>{{struct.name}}</span>
       </div>
 </template>

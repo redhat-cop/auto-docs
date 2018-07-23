@@ -1,5 +1,5 @@
 <template>
-      <div>
+      <div class="host">
           <i :class = "struct.icon"></i> <span>{{struct.name}}</span>
       </div>
 </template>
@@ -29,5 +29,6 @@
     font-family: Overpass;
 
 }
+
 
 </style>
