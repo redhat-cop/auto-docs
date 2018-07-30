@@ -1,0 +1,6 @@
+Fix up the styling 
+ - flip the emphasis from the titles to the icons/text
+ - add some more infrastructure to the document
+Templating for entire application
+ - includes custom CSS
+ - built in switches for the VUE <template</template>'s 
