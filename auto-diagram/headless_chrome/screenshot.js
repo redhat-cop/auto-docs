@@ -2,7 +2,7 @@ const CDP = require('chrome-remote-interface');
 const file = require('fs');
 
 const url = 'http://localhost:8080/';
-const format = 'jpeg';
+const format = 'png';
 const viewportWidth = 800;
 
 
@@ -41,10 +41,6 @@ module.exports = function takeScreenShot(){
         await Emulation.setDeviceMetricsOverride(deviceMetrics);
         await Emulation.setVisibleSize({width: viewportWidth, height: height});
 
-	var temp = Page.getCookies()
-	var stringer = "this is old"
-	temp = temp.then(function(result) { console.log(result.cookies[0].name); stringer = result.cookies[0].name; }); 
-	console.log(stringer)
         // get the base64 screenshot.
         const screenshot = await Page.captureScreenshot({format});
         // Save the base64 screenshot to binary image file

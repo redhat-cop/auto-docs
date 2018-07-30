@@ -7,4 +7,3 @@ new Vue({
   render: h => h(App)
 }).$mount('#app') //Mount the app component to the view controller
 
-document.cookie = "done=this is done;";

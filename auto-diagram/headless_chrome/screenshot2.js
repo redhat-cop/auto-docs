@@ -2,7 +2,7 @@ const CDP = require('chrome-remote-interface');
 const file = require('fs');
 
 const url = 'http://localhost:8080/';
-const format = 'jpeg';
+const format = 'png';
 const viewportWidth = 800;
 
 
