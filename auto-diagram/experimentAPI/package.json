@@ -1,0 +1,27 @@
+{
+  "name": "express-workshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "chalk": "^2.3.0",
+    "express": "^4.16.2",
+    "knock-knock-jokes": "^1.7.0",
+    "one-liner-joke": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonathanLigh/express-workshop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JonathanLigh/express-workshop/issues"
+  },
+  "homepage": "https://github.com/JonathanLigh/express-workshop#readme"
+}
