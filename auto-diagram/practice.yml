@@ -1,0 +1,10 @@
+---
+
+- name: Network Getting Started First Playbook
+  hosts: localhost ansible_connection=local
+  tasks:
+    - name: copying the output jpeg file
+      copy:
+        src: ./output.jpeg
+        dest: ./test/output.jpegchr
+        mode: 644

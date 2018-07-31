@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "customerName": "XYZ Corp",
+    "start": "2018-10-08",
+    "end": "2018-11-19"
+  },
+  "stack": {
+    "hosting": [
+      {
+        "name": "openStack",
+        "icon": "openstack"
+      },
+      {
+        "name": "Aamazon Web Services",
+        "icon": "aws"
+      }
+    ],
+    "sourceControl": [
+      {
+        "name": "GitHub",
+        "icon": "github"
+      }
+    ],
+    "collaborationTools": [
+      {
+        "name": "Slack",
+        "icon": "slack"
+      },
+      {
+        "name": "Jira",
+        "icon": "jira"
+      }
+    ],
+    "environments": [
+      {
+        "name": "Development"
+      },
+      {
+        "name": "Test"
+      }
+    ],
+    "appContainers": [
+      {
+        "name": "Spring Boot",
+        "icon": "springboot"
+      },
+      {
+        "name": "Mongo",
+        "icon": "database"
+      },
+      {
+        "name": "Vue",
+        "icon": "vue"
+      }
+    ],
+    "testLibraries": [
+      {
+        "name": "Jest",
+        "icon": "jest"
+      },
+      {
+        "name": "JUnit",
+        "icon": "junit"
+      }
+    ]
+  },
+  "assets": {
+    "highLevelDiagram": "https://example.com/foobar"
+  }
+}
