@@ -10,7 +10,7 @@ RUN curl -sL https://rpm.nodesource.com/setup_8.x | bash - && \
     yum -y install epel-release && \
     yum install -y nodejs && \
     yum install -y google-chrome-stable && \
-    cd experimentAPI && \
+    cd API && \
     npm install && \
     cd .. && \
     cd generator && \
@@ -18,4 +18,4 @@ RUN curl -sL https://rpm.nodesource.com/setup_8.x | bash - && \
 
 RUN ./kickoff
 
-CMD cd experimentAPI && npm start
+CMD cd API && npm start

@@ -1,8 +1,6 @@
 var chalk = require('chalk');
 var express = require('express');
-var jokes = require('./jokeHandler');
 var app = express();
-var utils = require('./utils');
 
 
 app.get('/getIMG', function(req, res){

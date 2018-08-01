@@ -1,0 +1,7 @@
+- name: Image Generation and Capture
+  hosts: dockerserver
+  tasks:
+    - docker_image:
+        path: .
+        name: imageGenerator
+        
