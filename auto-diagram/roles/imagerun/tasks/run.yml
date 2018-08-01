@@ -1,0 +1,9 @@
+---
+- name: image capture
+  docker_container:
+    name: imagegenerator
+    image: imagegen
+    exposed_ports: 
+      - 8000
+    published_ports: 
+      - 1234:8000

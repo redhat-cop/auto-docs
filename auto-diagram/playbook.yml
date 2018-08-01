@@ -1,13 +1,5 @@
 - name: Image Generation and Capture
   hosts: dockerserver
-  tasks:
-    - docker_image:
-        path: .
-        name: imagegen
-    - docker_container:
-        name: imagegenerator
-        image: imagegen
-        exposed_ports: 
-          - 8000
-        published_ports: 
-          - 1234:8000
+  roles:
+    - imagegen
+    - imagerun

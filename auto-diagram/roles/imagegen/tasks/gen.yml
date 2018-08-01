@@ -1,0 +1,5 @@
+---
+- name: Image Generation
+  docker_image:
+    path: .
+    name: imagegen
