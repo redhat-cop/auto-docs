@@ -1,0 +1,33 @@
+---
+
+- name: Request Metada of All Pages with the Specified Name
+  uri:
+    url: '{{ confluence.url }}/wiki/rest/api/content?title={{ confluence.page_name | urlencode }}'
+    method: GET
+    user: '{{ confluence.username }}'
+    password: '{{ confluence.password }}'
+    force_basic_auth: yes
+    status_code: 200
+    return_content: yes
+  register: pages_metadata
+
+
+- name: Find the Page Id
+  include_tasks: set_page_id.yml page_result={{ item }}
+  with_items:
+  - "{{ pages_metadata.json['results'] }}"
+
+
+- name: Request Content of Desired Page Based on the Page Id
+  uri:
+    url: '{{ confluence.url }}/wiki/rest/api/content/{{ page_id }}'
+    method: GET
+    user: '{{ confluence.username }}'
+    password: '{{ confluence.password }}'
+    header:
+        - Accept: 'application/json'
+    return_content: yes
+    force_basic_auth: yes
+    body_format: json
+    status_code: 200
+  register: page_content

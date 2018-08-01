@@ -1,0 +1,11 @@
+---
+# tasks file for publish-docs
+
+- name: Use md-to-html role to generate html content
+  include_role:
+    name: md-to-html
+  vars:
+    markdown_content: "{{ generate_docs.output }}"
+
+- include_tasks: get_page_content.yml
+- include_tasks: add_new_content.yml

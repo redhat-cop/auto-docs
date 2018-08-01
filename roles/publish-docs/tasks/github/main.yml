@@ -1,0 +1,21 @@
+---
+# tasks file for publish-github
+- name: Clone wiki repo
+  git:
+    repo: git@github.com:{{ github.repo_owner }}/{{ github.repo }}.wiki.git
+    dest: /tmp/{{ github.repo }}.wiki
+    version: HEAD
+
+- name: Add conents to wiki file
+  copy:
+    content: "{{ generate_docs.output }}"
+    dest: "/tmp/{{ github.repo }}.wiki/{{ github.edit_doc }}"
+
+# Seems like this has to use shell module due to use of chdir
+- name: Publish changes to wiki
+  shell: |
+    chdir=/tmp/{{ github.repo }}.wiki
+    git add {{ github.edit_doc }}
+    git commit -m "{{ github.commit_message }}"
+    git push
+  notify: github cleanup temp
