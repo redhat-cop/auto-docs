@@ -1,7 +1,0 @@
----
-# tasks file for gen-docs
-
-- name: Register template
-  set_fact:
-    generate_docs:
-      output: "{{ lookup('template', '{{ template_path }}')}}"
