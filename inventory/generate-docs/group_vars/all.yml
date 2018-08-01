@@ -8,11 +8,11 @@ about:
   install_date: <tbd>
   retired_date: <tbd>
   root_access: yes | no
-  console_url: https://<tbd>/rht-labs.com
-  default_domain: apps.<tbd>.rht-labs.com
-  exposed_registry: https://registry-console-defualt.apps.<tbd>.rht-labs.com
-  openshift_logging: https://kibana.apps.<tbd>.rht-labs.com
-  openshift_metrics: https://hawkular-metrics.apps.<tbd>.rht-labs.com
+  console_url: https://<tbd>/example.com
+  default_domain: apps.<tbd>.example.com
+  exposed_registry: https://registry-console-defualt.apps.<tbd>.example.com
+  openshift_logging: https://kibana.apps.<tbd>.example.com
+  openshift_metrics: https://hawkular-metrics.apps.<tbd>.example.com
 
 general_info:
   - what: IaaS/infrastructure

@@ -1,4 +1,4 @@
-gen-docs
+generate-docs
 ========
 
 For testing purposes, you may want to consider using `grip`. This will allow
