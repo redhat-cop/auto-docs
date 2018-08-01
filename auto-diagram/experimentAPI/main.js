@@ -5,9 +5,9 @@ var app = express();
 var utils = require('./utils');
 
 
-app.get('/getJPEG', function(req, res){
-  //res.sendFile('/home/rmusti/Documents/experimentAPI/express-workshop/output.jpeg');
-  res.sendFile(__dirname + '/output.jpeg');
+app.get('/getIMG', function(req, res){
+  //res.sendFile('/home/rmusti/Documents/experimentAPI/express-workshop/output.png');
+  res.sendFile(__dirname + '/output.png');
 });
 
 

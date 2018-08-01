@@ -2,7 +2,7 @@ const CDP = require('chrome-remote-interface');
 const file = require('fs');
 
 const url = 'http://localhost:8080/';
-const format = 'jpeg';
+const format = 'png';
 const viewportWidth = 800;
 
 
@@ -49,7 +49,7 @@ module.exports = function takeScreenShot(){
         const screenshot = await Page.captureScreenshot({format});
         // Save the base64 screenshot to binary image file
         const buffer = new Buffer(screenshot.data, 'base64');
-        file.writeFile('./headless_chrome/output.jpeg', buffer, 'base64', function(err) {
+        file.writeFile('./headless_chrome/output.png', buffer, 'base64', function(err) {
           if (err) {
             console.error(err);
             reject();
