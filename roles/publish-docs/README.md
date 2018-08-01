@@ -23,7 +23,16 @@ Outside of this, variables must be specified in order to satisfy the requirement
 Dependencies
 ------------
 
-When using confluence, this must be paired with the role md-to-html.  
+When using confluence, this must be paired with the role `md-to-html`.
+
+* Run `ansible-galaxy` to pull in the necessary requirements for confluence:
+
+> **NOTE:** The target directory ( `md-to-html` ) is **important** as the playbooks know to source roles and playbooks from that location.
+
+```
+cd roles/
+ansible-galaxy install -r requirements.yml -p md-to-html
+```
 
 Example Playbook
 ----------------
