@@ -14,7 +14,8 @@ RUN curl -sL https://rpm.nodesource.com/setup_8.x | bash - && \
     npm install && \
     cd .. && \
     cd generator && \
-    npm install && \
-    cd .. 
+    npm install
 
-CMD echo foo
+RUN ./kickoff
+
+CMD cd experimentAPI && npm start
