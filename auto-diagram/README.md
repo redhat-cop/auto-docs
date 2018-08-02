@@ -11,7 +11,7 @@ Creating a layer of automation for diagram creation
 4. Review the `/src/components/` folder.
     - This folder contains the components referenced in the `App.vue`.
 5. Modify these two files and the CSS within them to create different layouts.
-6. Modify `/public/example-api.json` to modify the text/logos included in the image.
+6. Modify `/public/current-api.json` to modify the text/logos included in the image.
     - Note: you must use font-awesome to find the exact class name the logo you want to use.
 6. Run `npm run serve` to preview the image. Follow the link the App is running at (should be [http://localhost:8080][development_link]  )
 [development_link]: http://localhost:8080

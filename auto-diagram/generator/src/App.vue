@@ -71,7 +71,7 @@ import Test from './components/Test.vue'
 
 import axios from 'axios';
 
-var fileUpload = '/example-api.json';
+var fileUpload = '/current-api.json';
 
 export default {
   name: 'app',
