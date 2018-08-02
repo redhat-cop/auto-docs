@@ -7,8 +7,7 @@ const viewportWidth = 800;
 
 
 // Start the Chrome Debugging Protocol
-module.exports = function takeScreenShot(){
-  return new Promise(function(resolve, reject){
+function takeScreenShot(){
     CDP(async function(client) {
       // Extract used DevTools domains.
       const {DOM, Emulation, Network, Page} = client;
@@ -43,22 +42,21 @@ module.exports = function takeScreenShot(){
 
         // get the base64 screenshot.
         const screenshot = await Page.captureScreenshot({format});
+
         // Save the base64 screenshot to binary image file
         const buffer = new Buffer(screenshot.data, 'base64');
         file.writeFile('./headless_chrome/output.png', buffer, 'base64', function(err) {
           if (err) {
             console.error(err);
-            reject();
           } else {
             console.log('Screenshot saved');
-            resolve();
           }
           client.close();
         });
       });
     }).on('error', err => {
       console.error('Cannot connect to browser:', err);
-      reject();
     });
-  });
 };
+
+takeScreenShot();
