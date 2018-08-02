@@ -184,7 +184,6 @@ span {
 
 
 .content-box-environment{
-    /* border: 10px solid #d8dcdd; */
     grid-area: environment;
 
 }
@@ -193,15 +192,12 @@ span {
     grid-row: repeat(3, 1fr);
 }
 
-.collaboration-wrapper {
-    /* border: 10px solid #d8dcdd; */
-    grid-area: collaboration;
+.collaboration-wrapper {    grid-area: collaboration;
     display: grid;
     grid-row: repeat(2, 1fr);
 }
 
 .content-box-test{
-    /* border: 10px solid #d8dcdd; */
     grid-area: test;
 }
 .test-wrapper {
@@ -211,7 +207,6 @@ span {
 }
 
 .content-box-source{
-    /* border: 10px solid #d8dcdd; */
     grid-area: source;
 }
 .source-wrapper {
