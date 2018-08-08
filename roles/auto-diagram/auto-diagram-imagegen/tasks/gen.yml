@@ -1,5 +1,5 @@
 ---
 - name: Image Generation
   docker_image:
-    path: .
+    path: ./auto-diagram/
     name: imagegen

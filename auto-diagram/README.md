@@ -20,7 +20,8 @@ Creating a layer of automation for diagram creation
 #### Generating a PNG
 1. Fork and clone the repository.
 2. Navigate to the `/auto-diagram/` folder.
-3. Run the command `ansible-playbook -i inventory/ playbook.yml`
+3. Run the command `ansible-playbook -i inventory/auto-diagram/ playbooks/auto-diagram/playbook.yml'
+
     - Note, this command will take about 4-6 minutes to run.
 4. The png is hosted at [http://localhost:1234/getIMG][screenshot_link]
 [screenshot_link]: http://localhost:1234/getIMG

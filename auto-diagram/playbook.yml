@@ -1,5 +1,0 @@
-- name: Image Generation and Capture
-  hosts: dockerserver
-  roles:
-    - imagegen
-    - imagerun
