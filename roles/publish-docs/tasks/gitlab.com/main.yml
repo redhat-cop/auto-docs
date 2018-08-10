@@ -10,10 +10,14 @@
     status_code: 200
   register: project_list
 
-- name: "Find the project id"
-  include_tasks: set_project_id.yml project_data={{ item }}
+- name: Find the project id
+  set_fact:
+    project_id: "{{ item['id'] }}"
+  when:
+    - item.name == gitlab.project_name
   with_items:
-  - "{{ project_list.json }}"
+    - "{{ project_list.json }}"
+
 
 - name: Publish to gitlab
   uri:

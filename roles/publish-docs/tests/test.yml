@@ -1,4 +1,5 @@
 ---
 - hosts: localhost
-  roles:
-    - publish-docs
+  tasks:
+    - include_role:
+        name: "{{ playbook_dir }}/../../publish-docs"

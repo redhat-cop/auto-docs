@@ -4,5 +4,5 @@
 # handlers file for dhcp-config
 - name: 'github cleanup temp'
   file:
-    path: /tmp/{{ github.repo }}.wiki
+    path: "{{ tempdir.path }}"
     state: absent

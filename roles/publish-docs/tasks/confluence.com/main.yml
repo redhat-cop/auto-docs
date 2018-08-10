@@ -1,0 +1,5 @@
+---
+# tasks file for publish-docs
+
+- include_tasks: get_page_content.yml
+- include_tasks: add_new_content.yml

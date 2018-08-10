@@ -1,9 +1,0 @@
----
-
-- set_fact:
-    id_check: "{{ project_data['id'] }}"
-    name_check: "{{ project_data['name'] }}"
-
-- set_fact:
-    project_id: "{{ id_check }}"
-  when: gitlab.project_name == name_check

@@ -3,12 +3,12 @@
 
 - name: Check if Publishing to Github
   include_tasks: github/main.yml
-  when: include_github == True
+  when: github is defined
 
 - name: Check if Publishing to Gitlab
   include_tasks: gitlab/main.yml
-  when: include_gitlab == True
+  when: gitlab is defined
 
 - name: Check if Publishing to Confluence
   include_tasks: confluence/main.yml
-  when: include_confluence == True
+  when: confluence is defined

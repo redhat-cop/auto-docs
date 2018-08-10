@@ -1,6 +1,0 @@
----
-
-- name: Register Page Id if the Reuqested Space Names Match
-  set_fact:
-    page_id: "{{ page_result['id'] }}"
-  when: page_result['_expandable']['space'].split('/')[-1] == confluence.space_key

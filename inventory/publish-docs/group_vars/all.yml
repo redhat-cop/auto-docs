@@ -1,7 +1,5 @@
 ---
 
-include_confluence: True
-
 confluence:
   username: username
   password: password
