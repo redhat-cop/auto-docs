@@ -1,6 +1,6 @@
 ---
 
-- name: Request Metada of All Pages with the Specified Name
+- name: Request Meta data of All Pages with the Specified Name
   uri:
     url: '{{ confluence.url }}/wiki/rest/api/content?title={{ confluence.page_name | urlencode }}'
     method: GET

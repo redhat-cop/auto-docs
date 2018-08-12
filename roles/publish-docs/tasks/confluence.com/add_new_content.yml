@@ -19,7 +19,7 @@
       version:
         number: "{{ new_version }}"
 
-- name: "Update Content at Destination Site"
+- name: Update Content at Destination Site
   uri:
     url: '{{ confluence.url }}/wiki/rest/api/content/{{ page_id }}'
     header:
