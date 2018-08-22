@@ -26,5 +26,5 @@
     headers:
       PRIVATE-TOKEN: "{{ publish_docs.gitlab.token }}"
     body_format: raw
-    body: "content={{ generate_docs.output | urlencode() }}&title={{ publish_docs.gitlab.page_title | urlencode()}}"
+    body: "content={{ publish_docs.content | urlencode() }}&title={{ publish_docs.gitlab.page_title | urlencode()}}"
     status_code: 200

@@ -14,7 +14,7 @@
 
 - name: Add contents to wiki file
   copy:
-    content: "{{ generate_docs.output }}"
+    content: "{{ publish_docs.content }}"
     dest: "{{ tempdir.path }}/{{ publish_docs.github.repo }}.wiki/{{ publish_docs.github.edit_doc }}"
 
 # Seems like this has to use shell module due to use of chdir
