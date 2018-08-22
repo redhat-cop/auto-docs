@@ -1,0 +1,36 @@
+---
+
+- name: Request Meta data of All Pages with the Specified Name
+  uri:
+    url: '{{ publish_docs.confluence.url }}/wiki/rest/api/content?title={{ publish_docs.confluence.page_name | urlencode }}'
+    method: GET
+    user: '{{ publish_docs.confluence.username }}'
+    password: '{{ publish_docs.confluence.password }}'
+    force_basic_auth: yes
+    status_code: 200
+    return_content: yes
+  register: pages_metadata
+
+
+- name: Find the page id
+  set_fact:
+    page_id: "{{ item['id'] }}"
+  when:
+    - item['_expandable']['space'].split('/')[-1] == publish_docs.confluence.space_key
+  with_items:
+  - "{{ pages_metadata.json['results'] }}"
+
+
+- name: Request Content of Desired Page Based on the Page Id
+  uri:
+    url: '{{ publish_docs.confluence.url }}/wiki/rest/api/content/{{ page_id }}'
+    method: GET
+    user: '{{ publish_docs.confluence.username }}'
+    password: '{{ publish_docs.confluence.password }}'
+    header:
+        - Accept: 'application/json'
+    return_content: yes
+    force_basic_auth: yes
+    body_format: json
+    status_code: 200
+  register: page_content

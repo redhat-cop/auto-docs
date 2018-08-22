@@ -1,0 +1,30 @@
+---
+# tasks file for publish-gitlab
+
+- name: Get project id
+  uri:
+    url: https://gitlab.com/api/v4/users/{{ publish_docs.gitlab.user }}/projects/
+    method: GET
+    headers:
+      PRIVATE-TOKEN: "{{ publish_docs.gitlab.token }}"
+    status_code: 200
+  register: project_list
+
+- name: Find the project id
+  set_fact:
+    project_id: "{{ item['id'] }}"
+  when:
+    - item.name == publish_docs.gitlab.project_name
+  with_items:
+    - "{{ project_list.json }}"
+
+
+- name: Publish to gitlab
+  uri:
+    url: https://gitlab.com/api/v4/projects/{{ project_id }}/wikis/{{ publish_docs.gitlab.slug }}
+    method: PUT
+    headers:
+      PRIVATE-TOKEN: "{{ publish_docs.gitlab.token }}"
+    body_format: raw
+    body: "content={{ publish_docs.content | urlencode() }}&title={{ publish_docs.gitlab.page_title | urlencode()}}"
+    status_code: 200

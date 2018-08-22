@@ -1,0 +1,35 @@
+---
+
+- name: Set New Page Version
+  set_fact:
+    new_version: "{{ page_content.json['version']['number'] + 1 }}"
+
+- name: Create New Payload
+  set_fact:
+    payload:
+      body:
+        storage:
+          value: "{{ publish_docs.content }}"
+          representation: "storage"
+      title: "{{ publish_docs.confluence.page_name }}"
+      type: "page"
+      id: "{{ page_id }}"
+      space:
+        key: "{{ publish_docs.confluence.space_key }}"
+      version:
+        number: "{{ new_version }}"
+
+- name: Update Content at Destination Site
+  uri:
+    url: '{{ publish_docs.confluence.url }}/wiki/rest/api/content/{{ page_id }}'
+    header:
+      - Accept: "application/json"
+      - Content-Type: "applicaton/json"
+    method: PUT
+    user: '{{ publish_docs.confluence.username }}'
+    password: '{{ publish_docs.confluence.password }}'
+    force_basic_auth: yes
+    status_code: 200
+    body_format: json
+    body: "{{ payload | to_json }}"
+  register: new_content_json

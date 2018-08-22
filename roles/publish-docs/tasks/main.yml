@@ -1,0 +1,14 @@
+---
+# tasks file for publish-docs
+
+- name: Check if Publishing to Github
+  include_tasks: github.com/main.yml
+  when: publish_docs.github is defined
+
+- name: Check if Publishing to Gitlab
+  include_tasks: gitlab.com/main.yml
+  when: publish_docs.gitlab is defined
+
+- name: Check if Publishing to Confluence
+  include_tasks: confluence.com/main.yml
+  when: publish_docs.confluence is defined
