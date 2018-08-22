@@ -1,1 +1,3 @@
-/auto-diagram/node_modules/*
+/auto-diagram-app/node_modules/*
+/auto-diagram-app/generator/node_modules/*
+/auto-diagram-app/API/node_modules/*

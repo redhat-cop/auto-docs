@@ -1,0 +1,3 @@
+#!/bin/sh
+cd ./generator/ && ./container.sh
+mv /app/generator/output.png /app/API/output.png

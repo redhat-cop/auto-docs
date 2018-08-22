@@ -1,0 +1,5 @@
+- name: Image Generation and Capture
+  hosts: dockerserver
+  roles:
+    - auto-diagram/auto-diagram-imagegen
+    - auto-diagram/auto-diagram-run
