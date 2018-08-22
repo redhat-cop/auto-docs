@@ -8,12 +8,13 @@ Requirements / Role Variables
 
 Control flow for which spaces to publish is managed via which inventory variables are defined. For example, if the following is defined within your inventory:
 ```
-confluence:
-  username: username
-  password: password
-  page_name: Example Page
-  url: https://example.atlassian.net
-  space_key: Example
+publish_docs:
+  confluence:
+    username: username
+    password: password
+    page_name: Example Page
+    url: https://example.atlassian.net
+    space_key: Example
 ```
 the control flow for confluence.com will execute. The same applies for github.com and gitlab.com.
 

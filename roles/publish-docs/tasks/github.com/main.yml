@@ -12,7 +12,7 @@
     dest: "{{ tempdir.path }}/{{ publish_docs.github.repo }}.wiki"
     version: HEAD
 
-- name: Add conents to wiki file
+- name: Add contents to wiki file
   copy:
     content: "{{ generate_docs.output }}"
     dest: "{{ tempdir.path }}/{{ publish_docs.github.repo }}.wiki/{{ publish_docs.github.edit_doc }}"
