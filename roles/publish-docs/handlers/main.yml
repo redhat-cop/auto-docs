@@ -1,6 +1,0 @@
----
-# handlers file for publish-docs
-- name: 'github cleanup temp'
-  file:
-    path: "{{ tempdir.path }}"
-    state: absent
