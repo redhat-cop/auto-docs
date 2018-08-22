@@ -8,20 +8,24 @@
 
 - name: Clone wiki repo
   git:
-    repo: git@github.com:{{ github.repo_owner }}/{{ github.repo }}.wiki.git
-    dest: "{{ tempdir.path }}/{{ github.repo }}.wiki"
+    repo: git@github.com:{{ publish_docs.github.repo_owner }}/{{ publish_docs.github.repo }}.wiki.git
+    dest: "{{ tempdir.path }}/{{ publish_docs.github.repo }}.wiki"
     version: HEAD
 
 - name: Add conents to wiki file
   copy:
     content: "{{ generate_docs.output }}"
-    dest: "{{ tempdir.path }}/{{ github.repo }}.wiki/{{ github.edit_doc }}"
+    dest: "{{ tempdir.path }}/{{ publish_docs.github.repo }}.wiki/{{ publish_docs.github.edit_doc }}"
 
 # Seems like this has to use shell module due to use of chdir
 - name: Publish changes to wiki
-  shell: |
-    chdir={{ tempdir.path }}/{{ github.repo }}.wiki
-    git add {{ github.edit_doc }}
-    git commit -m "{{ github.commit_message }}"
-    git push
-  notify: github cleanup temp
+  block:
+    - shell: |
+        chdir={{ tempdir.path }}/{{ publish_docs.github.repo }}.wiki
+        git add {{ publish_docs.github.edit_doc }}
+        git commit -m "{{ publish_docs.github.commit_message }}"
+        git push
+  always:
+    - file:
+        path: "{{ tempdir.path }}"
+        state: absent

@@ -11,23 +11,23 @@
         storage:
           value: "{{ generate_docs.output }}"
           representation: "storage"
-      title: "{{ confluence.page_name }}"
+      title: "{{ publish_docs.confluence.page_name }}"
       type: "page"
       id: "{{ page_id }}"
       space:
-        key: "{{ confluence.space_key }}"
+        key: "{{ publish_docs.confluence.space_key }}"
       version:
         number: "{{ new_version }}"
 
 - name: Update Content at Destination Site
   uri:
-    url: '{{ confluence.url }}/wiki/rest/api/content/{{ page_id }}'
+    url: '{{ publish_docs.confluence.url }}/wiki/rest/api/content/{{ page_id }}'
     header:
       - Accept: "application/json"
       - Content-Type: "applicaton/json"
     method: PUT
-    user: '{{ confluence.username }}'
-    password: '{{ confluence.password }}'
+    user: '{{ publish_docs.confluence.username }}'
+    password: '{{ publish_docs.confluence.password }}'
     force_basic_auth: yes
     status_code: 200
     body_format: json
