@@ -9,7 +9,7 @@
     payload:
       body:
         storage:
-          value: "{{ generate_docs.output }}"
+          value: "{{ publish_docs.content }}"
           representation: "storage"
       title: "{{ publish_docs.confluence.page_name }}"
       type: "page"
