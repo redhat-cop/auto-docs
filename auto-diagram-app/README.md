@@ -27,7 +27,7 @@ Creating a layer of automation for diagram creation
 ## Front-end dev resources for developing the diagram
 
 - https://learnlayout.com/
-- https://vuesjs.org/v2/guide/index.html
+- https://vuejs.org/v2/guide/index.html
 - https://github.com/axios/axios
 - https://www.npmjs.com/package/live-server
 - https://cssgrid.io/
